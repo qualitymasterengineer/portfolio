@@ -43,8 +43,7 @@ window.TRANSLATIONS = {
       service_leader_desc: 'Technical leadership of QA teams under agile methodologies, defining global strategies and quality standards. Technical mentoring and continuous process optimization using Azure DevOps, Jira and ClickUp to ensure traceability and operational excellence in every development cycle.',
       service_observability_title: 'Observability & Quality Engineering',
       service_observability_desc: 'Implementation of monitoring strategies and proactive error analysis in production environments. Advanced interpretation of performance metrics and logs for early detection of bottlenecks and prevention of critical failures, ensuring high availability and software resilience.',
-      tools_title: 'Tools & Applications',
-      clients_title: 'Personal Projects'
+      tools_title: 'Tools & Applications'
     },
     resume: {
       resume_title: 'Experience',
@@ -145,10 +144,18 @@ window.TRANSLATIONS = {
       testimonial1_date: '14 June, 2021',
       testimonial1_name: 'Giovanna Yanelli',
       testimonial1_text: 'Texto de lo que me digan.',
+      testimonial2_date: '14 June, 2021',
       testimonial2_name: 'Jessica miller',
       testimonial2_text: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.',
+      testimonial3_date: '14 June, 2021',
       testimonial3_name: 'Henry william',
       testimonial3_text: 'Richard was hired to create a corporate identity. We were very pleased with the work done. She has a lot of experience and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.'
+    },
+    clients: {
+      clients_title: 'Personal Projects',
+      clients_qarmy_alt: 'QARMY',
+      clients_mendozago_alt: 'Mendozago',
+      clients_logo_alt: 'Client logo'
     }
   },
   es: {
@@ -191,8 +198,7 @@ window.TRANSLATIONS = {
       service_leader_desc: 'Liderazgo técnico de equipos de QA bajo metodologías ágiles, definiendo estrategias globales y estándares de calidad. Mentoría técnica y optimización continua de procesos utilizando Azure DevOps, Jira y ClickUp para asegurar la trazabilidad y la excelencia operativa en cada ciclo de desarrollo.',
       service_observability_title: 'Observability & Quality Engineering',
       service_observability_desc: 'Implementación de estrategias de monitoreo y análisis proactivo de errores en entornos productivos. Interpretación avanzada de métricas de rendimiento y logs para la detección temprana de cuellos de botella y la prevención de fallos críticos, garantizando la alta disponibilidad y resiliencia del software.',
-      tools_title: 'Herramientas y aplicaciones',
-      clients_title: 'Proyectos personales'
+      tools_title: 'Herramientas y aplicaciones'
     },
     resume: {
       resume_title: 'Experiencia',
@@ -293,10 +299,18 @@ window.TRANSLATIONS = {
       testimonial1_date: '14 junio, 2021',
       testimonial1_name: 'Giovanna Yanelli',
       testimonial1_text: 'Texto de lo que me digan.',
+      testimonial2_date: '14 junio, 2021',
       testimonial2_name: 'Jessica miller',
       testimonial2_text: 'Richard fue contratado para crear una identidad corporativa. Estuvimos muy satisfechos con el trabajo realizado. Tiene mucha experiencia y se preocupa por las necesidades del cliente. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.',
+      testimonial3_date: '14 junio, 2021',
       testimonial3_name: 'Henry william',
       testimonial3_text: 'Richard fue contratado para crear una identidad corporativa. Estuvimos muy satisfechos con el trabajo realizado. Tiene mucha experiencia y se preocupa por las necesidades del cliente. Lorem ipsum dolor sit amet, ullamcous cididt consectetur adipiscing elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.'
+    },
+    clients: {
+      clients_title: 'Proyectos personales',
+      clients_qarmy_alt: 'QARMY',
+      clients_mendozago_alt: 'Mendozago',
+      clients_logo_alt: 'Logo de cliente'
     }
   }
 };
