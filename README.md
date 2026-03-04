@@ -40,8 +40,44 @@ portfolio/
 - Navegador moderno (sin dependencias de Node ni build)
 - Para publicar: dominio y alojamiento estático (o servidor con soporte para HTML/CSS/JS)
 
+## Ejecución en local
+
+El contenido se carga por JavaScript (`fetch`), por lo que **hay que servir el proyecto por HTTP**; abrir `index.html` con `file://` no funciona correctamente.
+
+Desde la raíz del proyecto (`portfolio-source`), usa uno de estos métodos:
+
+### Con Node.js (recomendado)
+
+```bash
+npx serve .
+```
+
+Luego abre en el navegador: **http://localhost:3000**
+
+Alternativa con `http-server`:
+
+```bash
+npx http-server -p 8080
+```
+
+URL: **http://localhost:8080**
+
+### Con Python
+
+```bash
+python -m http.server 8000
+```
+
+URL: **http://localhost:8000**
+
+### Con Live Server (VS Code / Cursor)
+
+1. Instala la extensión **Live Server**.
+2. Clic derecho en `index.html` → **Open with Live Server**.
+3. Se abrirá el navegador en la URL que indique la extensión (p. ej. http://127.0.0.1:5500).
+
 ## Uso
 
 1. Clonar o descargar el repositorio.
-2. Abrir `index.html` en el navegador o servir la carpeta con un servidor estático.
-3. Cambiar idioma desde el selector en la interfaz (si está implementado) o editando `assets/js/i18n.js`.
+2. Servir la carpeta en local con uno de los comandos anteriores (no abrir `index.html` directamente).
+3. Cambiar idioma desde el selector EN/ES en la interfaz o editando `assets/js/i18n.js`.
