@@ -1,43 +1,47 @@
-# portfolio-source
+# Portfolio - Quality Master Engineer
 
-Repositorio privado que contiene el código fuente del portfolio. Cada push a `main` se sincroniza automáticamente al repositorio público mediante GitHub Actions.
+**Versión:** 1.0
 
-## Flujo de despliegue automático (GitHub Actions)
+Portfolio personal de **Quality Master Engineer** (QME): perfil profesional, servicios, experiencia, proyectos y blog. Diseño responsive, sin dependencias de build (HTML, CSS y JavaScript vanilla).
 
-### Qué hace el workflow
+## Contenido
 
-- **Archivo:** `.github/workflows/deploy.yml`
-- **Disparador:** cada vez que haces `push` a la rama `main`.
-- **Acción:** toma todo el contenido de este repositorio y lo envía al repositorio público `qualitymasterengineer/portfolio` en la rama `main`.
+- [Inicio](#home): Presentación, servicios, testimonios y proyectos personales
+- [Sobre mí](#about): Experiencia y enfoque en QA y automatización
+- [Resume](#resume): Formación, experiencia laboral y habilidades
+- [Portfolio](#portfolio): Proyectos destacados
+- [Blog](#blog): Entradas de blog
+- [Contacto](#contact): Formulario de contacto
 
-### Requisitos previos
+## Características
 
-1. **Token de acceso personal (PAT)**  
-   En GitHub: **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)** → **Generate new token**.  
-   Permisos necesarios: **repo** y **workflow**.
+- **Idiomas**: Inglés y español (i18n con `data-i18n` y `data-i18n-placeholder`)
+- **Secciones**: About, Resume, Portfolio, Blog, Contact
+- **Servicios**: Mobile Testing, QA manual, frameworks de automatización (Playwright, Selenium, Cypress), rendimiento (JMeter, K6), CI/CD, validación de datos y APIs, liderazgo técnico, observabilidad
+- **Herramientas**: Appium, Jira, Azure DevOps, ClickUp, Cypress, Docker, Git, GitHub, Jenkins, JMeter, K6, MongoDB, MySQL, Playwright, PostgreSQL, Postman, Selenium
 
-2. **Secreto en este repositorio**  
-   En el repo privado (portfolio-source): **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.  
-   - **Nombre:** `API_TOKEN_GITHUB`  
-   - **Valor:** el PAT generado en el paso anterior.
+## Estructura del proyecto
 
-3. **Repositorio público**  
-   Debe existir el repositorio `qualitymasterengineer/portfolio` en GitHub (puede estar vacío).
+```
+portfolio/
+├── index.html
+├── README.md
+├── assets/
+│   ├── css/style.css
+│   ├── js/
+│   │   ├── i18n.js      # Traducciones EN/ES
+│   │   └── script.js
+│   ├── images/
+│   └── tools-logo/      # Logos de herramientas
+```
 
-### Configuración del workflow
+## Requisitos
 
-En `.github/workflows/deploy.yml` puedes revisar o ajustar:
+- Navegador moderno (sin dependencias de Node ni build)
+- Para publicar: dominio y alojamiento estático (o servidor con soporte para HTML/CSS/JS)
 
-- `destination-github-username` y `destination-repository-name`: repositorio de destino.
-- `user-email`: correo asociado a la cuenta de GitHub (para los commits que hace el workflow en el repo público).
-- `target-branch`: rama del repositorio público donde se hace push (por defecto `main`).
+## Uso
 
-### Si aparece error 403 (Forbidden)
-
-- Comprueba que el secreto `API_TOKEN_GITHUB` esté creado y escrito correctamente.
-- Verifica que el PAT tenga los permisos **repo** y **workflow**.
-- Asegúrate de que `user-email` en el workflow coincida con el correo de la cuenta que posee el token y el repositorio público.
-
-### Ver ejecuciones
-
-En este repositorio: pestaña **Actions**. Ahí ves el historial de ejecuciones del workflow y los logs de cada paso.
+1. Clonar o descargar el repositorio.
+2. Abrir `index.html` en el navegador o servir la carpeta con un servidor estático.
+3. Cambiar idioma desde el selector en la interfaz (si está implementado) o editando `assets/js/i18n.js`.
