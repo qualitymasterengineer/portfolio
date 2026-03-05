@@ -11,7 +11,7 @@
    * Cambia a false la que quieras ocultar (ej: blog: false).
    */
   window.PORTFOLIO_PAGES = {
-    about: false,
+    about: true,
     aboutUs: true,
     resume: false,
     expertise: true,

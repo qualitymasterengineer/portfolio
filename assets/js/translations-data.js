@@ -111,7 +111,7 @@ window.TRANSLATIONS = {
       skill_wordpress: 'WordPress'
     },
     expertise: {
-      expertise_title: 'Strategy & Expertise',
+      expertise_title: 'Expertise',
       expertise_philosophy_title: 'Our Philosophy',
       philosophy_1_title: 'Integral Quality Strategy',
       philosophy_1_desc: 'Implementation of frameworks that guarantee software stability from the early stages of development.',
@@ -234,7 +234,7 @@ window.TRANSLATIONS = {
       nav_about: 'Sobre mí',
       nav_about_us: 'Sobre nosotros',
       nav_resume: 'Currículum',
-      nav_expertise: 'Expertise',
+      nav_expertise: 'Experiencia',
       nav_portfolio: 'Portafolio',
       nav_blog: 'Blog',
       nav_contact: 'Contacto'
@@ -326,7 +326,7 @@ window.TRANSLATIONS = {
       skill_wordpress: 'WordPress'
     },
     expertise: {
-      expertise_title: 'Estrategia y Expertise',
+      expertise_title: 'Experiencia',
       expertise_philosophy_title: 'Nuestra Filosofía',
       philosophy_1_title: 'Estrategia de Calidad Integral',
       philosophy_1_desc: 'Implementación de marcos de trabajo que garantizan la estabilidad del software desde las etapas iniciales de desarrollo.',
@@ -341,15 +341,15 @@ window.TRANSLATIONS = {
       trajectory_2_desc: 'Dominio avanzado en API Testing (Postman) y validación de integridad en bases de datos relacionales y no relacionales.',
       trajectory_3_title: 'Optimización de Performance',
       trajectory_3_desc: 'Especialistas en identificar cuellos de botella mediante simulaciones de carga con JMeter y K6.',
-      expertise_competencies_title: 'Core Competencies',
-      comp_1_title: 'Automation Frameworks',
-      comp_1_tools: 'Playwright, Selenium, Cypress (E2E & Component Testing)',
-      comp_2_title: 'Performance & Load',
-      comp_2_tools: 'JMeter, K6 (Scalability Analysis)',
-      comp_3_title: 'Backend & APIs',
-      comp_3_tools: 'Postman, RESTful Services, SQL/NoSQL Validation',
-      comp_4_title: 'DevOps & CI/CD',
-      comp_4_tools: 'GitHub Actions, Git, Azure DevOps, Linux Environment'
+      expertise_competencies_title: 'Competencias principales',
+      comp_1_title: 'Frameworks de automatización',
+      comp_1_tools: 'Playwright, Selenium, Cypress (E2E y pruebas de componentes)',
+      comp_2_title: 'Rendimiento y carga',
+      comp_2_tools: 'JMeter, K6 (análisis de escalabilidad)',
+      comp_3_title: 'Backend y APIs',
+      comp_3_tools: 'Postman, servicios RESTful, validación SQL/NoSQL',
+      comp_4_title: 'DevOps y CI/CD',
+      comp_4_tools: 'GitHub Actions, Git, Azure DevOps, entorno Linux'
     },
     portfolio: {
       portfolio_title: 'Portafolio',
