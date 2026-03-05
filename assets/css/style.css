@@ -643,7 +643,7 @@ main {
 
 .about-us-services-title {
   color: var(--white-1);
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
   font-size: var(--fs-3);
 }
@@ -698,9 +698,27 @@ main {
   color: var(--light-gray);
   font-size: var(--fs-6);
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 14px 0;
   font-weight: var(--fw-300);
   text-align: justify;
+}
+
+.tech-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0;
+}
+
+.tech-stack-tags .badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  color: var(--orange-yellow-crayola);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 6px;
 }
 
 .about-us .clients {
@@ -773,6 +791,11 @@ main {
   font-weight: var(--fw-3);
   line-height: 1.6;
   text-align: justify;
+  margin-bottom: 14px;
+}
+
+.service-content-box .tech-stack-tags {
+  margin-top: 0;
 }
 
 
