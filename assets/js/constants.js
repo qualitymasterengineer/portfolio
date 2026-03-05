@@ -1,9 +1,24 @@
 /**
- * Constantes del portafolio (contacto, mapa, redes sociales).
- * Se aplican a: data-contact="email"|"phone", iframe data-contact="map", enlaces data-contact="social-facebook"|"social-youtube"|"social-instagram".
+ * Constantes del portafolio (contacto, mapa, redes sociales, pestañas visibles).
+ * PORTFOLIO_PAGES: pon a false las pestañas que no quieras mostrar.
+ * Se aplican a: data-contact="email"|"phone", iframe data-contact="map", enlaces data-contact="social-*".
  */
 (function () {
   'use strict';
+
+  /**
+   * Pestañas visibles en el menú y en el contenido.
+   * Cambia a false la que quieras ocultar (ej: blog: false).
+   */
+  window.PORTFOLIO_PAGES = {
+    about: false,
+    aboutUs: true,
+    resume: false,
+    expertise: true,
+    portfolio: true,
+    blog: false,
+    contact: true
+  };
 
   window.PORTFOLIO_CONSTANTS = {
     contact: {
@@ -49,9 +64,72 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyConstants);
-  } else {
+  var HIDDEN_PAGE_CLASS = 'portfolio-page-hidden';
+
+  function applyPagesConfig() {
+    var pages = window.PORTFOLIO_PAGES;
+    if (!pages || typeof pages !== 'object') return;
+
+    var root = document.getElementById('root');
+    if (!root) return;
+
+    var main = root.querySelector('main');
+    if (!main) return;
+
+    var enabled = Object.keys(pages).filter(function (id) { return pages[id] === true; });
+    if (enabled.length === 0) return;
+
+    main.querySelectorAll('article[data-page]').forEach(function (article) {
+      var page = article.getAttribute('data-page');
+      if (pages[page] !== true) {
+        article.classList.add(HIDDEN_PAGE_CLASS);
+      } else {
+        article.classList.remove(HIDDEN_PAGE_CLASS);
+      }
+    });
+
+    main.querySelectorAll('[data-nav-link]').forEach(function (btn) {
+      var page = btn.getAttribute('data-page');
+      var li = btn.closest('.navbar-item');
+      if (pages[page] !== true) {
+        btn.classList.add(HIDDEN_PAGE_CLASS);
+        if (li) li.classList.add(HIDDEN_PAGE_CLASS);
+      } else {
+        btn.classList.remove(HIDDEN_PAGE_CLASS);
+        if (li) li.classList.remove(HIDDEN_PAGE_CLASS);
+      }
+    });
+
+    var visibleArticles = main.querySelectorAll('article[data-page]:not(.' + HIDDEN_PAGE_CLASS + ')');
+    var visibleNavLinks = main.querySelectorAll('[data-nav-link]:not(.' + HIDDEN_PAGE_CLASS + ')');
+    main.querySelectorAll('article[data-page]').forEach(function (el) { el.classList.remove('active'); });
+    main.querySelectorAll('[data-nav-link]').forEach(function (el) { el.classList.remove('active'); });
+    if (visibleArticles.length) visibleArticles[0].classList.add('active');
+    if (visibleNavLinks.length) visibleNavLinks[0].classList.add('active');
+  }
+
+  function populateToolsLists() {
+    var base = './assets/tools-logo/';
+    document.querySelectorAll('ul[data-tools-images]').forEach(function (ul) {
+      var attr = ul.getAttribute('data-tools-images');
+      if (!attr) return;
+      var list = attr.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+      ul.innerHTML = list.map(function (filename) {
+        var name = filename.replace(/\.[^.]+$/, '');
+        return '<li class="clients-item"><img src="' + base + filename + '" alt="' + name + '" loading="lazy"></li>';
+      }).join('');
+    });
+  }
+
+  function run() {
     applyConstants();
+    applyPagesConfig();
+    populateToolsLists();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
   }
 })();

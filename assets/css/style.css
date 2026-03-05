@@ -254,6 +254,11 @@ article { display: none; }
 
 article.active {
   display: block;
+}
+
+.portfolio-page-hidden {
+  display: none !important;
+}
   animation: fade 0.5s ease backwards;
 }
 
@@ -549,6 +554,155 @@ main {
 
 .about-text p { margin-bottom: 15px; }
 
+/* About Us (Sobre nosotros) - lead, cards, stats */
+.about-us .article-title { margin-bottom: 15px; }
+
+.about-us-lead {
+  color: var(--white-1);
+  font-size: var(--fs-5);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: var(--fw-400);
+}
+
+.about-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.about-us-card {
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  border-left: 4px solid var(--orange-yellow-crayola);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-us-card:hover {
+  border-color: var(--orange-yellow-crayola);
+  border-left-color: var(--orange-yellow-crayola);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-us-card-title {
+  color: var(--white-1);
+  margin-bottom: 12px;
+  font-size: var(--fs-4);
+}
+
+.about-us-card-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  text-align: center;
+  border-top: 1px solid var(--jet);
+  padding-top: 30px;
+  margin-top: 10px;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 100px;
+}
+
+.stat-number {
+  display: block;
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  color: var(--orange-yellow-crayola);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: var(--fs-8);
+  color: var(--light-gray-70);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* About Us - Services section */
+.about-us-services {
+  margin-top: 40px;
+  padding-top: 35px;
+  border-top: 1px solid var(--jet);
+}
+
+.about-us-services-title {
+  color: var(--white-1);
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: var(--fs-3);
+}
+
+.about-us-services-subtitle {
+  color: var(--white-1);
+  font-size: var(--fs-6);
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.about-us-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.about-us-service-card {
+  padding: 30px 25px;
+  border-radius: 12px;
+  border: 1px solid var(--jet);
+  border-left: 4px solid var(--orange-yellow-crayola);
+  text-align: left;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-us-service-card:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about-us-service-icon {
+  margin-bottom: 18px;
+}
+
+.about-us-service-icon .service-icon {
+  width: 44px;
+  height: 44px;
+  color: var(--orange-yellow-crayola);
+}
+
+.about-us-service-card-title {
+  color: var(--white-1);
+  font-size: var(--fs-4);
+  margin-bottom: 12px;
+  font-weight: var(--fw-600);
+}
+
+.about-us-service-card-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  margin: 0;
+  font-weight: var(--fw-300);
+}
+
+.about-us .clients {
+  margin-top: 45px;
+}
 
 
 /**
@@ -570,8 +724,17 @@ main {
   background: var(--border-gradient-onyx);
   padding: 20px;
   border-radius: 14px;
+  border: 1px solid transparent;
+  border-left: 4px solid var(--orange-yellow-crayola);
   box-shadow: var(--shadow-2);
   z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-item:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .service-item::before {
@@ -924,9 +1087,11 @@ main {
   border-radius: inherit;
 }
 
-
-
-
+.skill .skill-capacity {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: var(--fs-7);
+}
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -1789,6 +1954,15 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 20px 25px;
   }
 
+  .about-us-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-us-services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
+  }
+
   /* testimonials */
 
   .testimonials-item { min-width: calc(50% - 15px); }
@@ -1932,7 +2106,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .social-list { justify-content: center; }
 
-
+  .about-us-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px;
+  }
 
   /**
 	 * RESUME

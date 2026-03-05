@@ -15,7 +15,9 @@
     'sidebar.html',
     'navbar.html',
     'about.html',
+    'about-us.html',
     'resume.html',
+    'expertise.html',
     'portfolio.html',
     'blog.html',
     'contact.html'
@@ -43,13 +45,15 @@
     var sidebar = htmlParts[1];
     var navbar = htmlParts[2];
     var about = htmlParts[3];
-    var resume = htmlParts[4];
-    var portfolio = htmlParts[5];
-    var blog = htmlParts[6];
-    var contact = htmlParts[7];
+    var aboutUs = htmlParts[4];
+    var resume = htmlParts[5];
+    var expertise = htmlParts[6];
+    var portfolio = htmlParts[7];
+    var blog = htmlParts[8];
+    var contact = htmlParts[9];
     var html = svg +
       '\n\n  <main>\n\n    ' + sidebar + '\n\n\n    <div class="main-content">\n\n      ' +
-      navbar + '\n\n\n\n      ' + about + '\n\n      ' + resume + '\n\n      ' + portfolio +
+      navbar + '\n\n\n\n      ' + about + '\n\n      ' + aboutUs + '\n\n      ' + resume + '\n\n      ' + expertise + '\n\n      ' + portfolio +
       '\n\n      ' + blog + '\n\n      ' + contact + '\n\n    </div>\n\n  </main>';
     root.innerHTML = html;
     runApp();

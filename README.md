@@ -33,16 +33,19 @@ portfolio/
 │   │   │   ├── svg-sprites.html   # Iconos SVG
 │   │   │   ├── sidebar.html      # Barra lateral
 │   │   │   ├── navbar.html       # Navegación (pestañas)
-│   │   │   ├── about.html        # Pestaña About
+│   │   │   ├── about.html        # Pestaña About (Sobre mí)
+│   │   │   ├── about-us.html     # Pestaña About Us (Sobre nosotros)
 │   │   │   ├── resume.html       # Pestaña Resume
+│   │   │   ├── expertise.html    # Pestaña Expertise
 │   │   │   ├── portfolio.html    # Pestaña Portfolio
 │   │   │   ├── blog.html         # Pestaña Blog
 │   │   │   └── contact.html      # Pestaña Contact
 │   │   └── content.html          # Respaldo solo si falla la carga de partials
 │   ├── js/
 │   │   ├── inject.js            # Carga parciales y monta la página
+│   │   ├── constants.js         # Contacto, mapa, redes, pestañas visibles (PORTFOLIO_PAGES)
 │   │   ├── translations-data.js # Traducciones EN/ES (editar aquí los textos)
-│   │   ├── i18n.js               # Aplica traducciones
+│   │   ├── i18n.js              # Aplica traducciones
 │   │   └── script.js
 │   ├── images/
 │   └── tools-logo/     # Logos de herramientas
@@ -126,6 +129,28 @@ El proyecto usa ahora **`assets/js/translations-data.js`**: ahí están todas la
 4. Recarga la página (Ctrl+Shift+R).
 
 `i18n.js` lee las traducciones de ese archivo, así que no necesitas tocar código ofuscado.
+
+## Mostrar u ocultar pestañas
+
+Puedes decidir qué pestañas (About, About Us, Resume, Expertise, Portfolio, Blog, Contact) se muestran en el menú y en el contenido.
+
+1. Abre **`assets/js/constants.js`**.
+2. Localiza el objeto **`PORTFOLIO_PAGES`**.
+3. Pon en **`false`** la pestaña que quieras ocultar. Ejemplo para ocultar Blog y Sobre nosotros:
+
+```javascript
+window.PORTFOLIO_PAGES = {
+  about: true,
+  aboutUs: false,     // oculta la pestaña Sobre nosotros
+  resume: true,
+  expertise: true,
+  portfolio: true,
+  blog: false,        // oculta la pestaña Blog
+  contact: true
+};
+```
+
+4. Guarda y recarga la página. Las pestañas en `false` desaparecerán del menú y su contenido no se mostrará. La primera pestaña visible quedará activa por defecto.
 
 ## Uso
 
