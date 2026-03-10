@@ -108,6 +108,45 @@
     if (visibleNavLinks.length) visibleNavLinks[0].classList.add('active');
   }
 
+  /**
+   * Asegura que el cambio de pestañas funcione: delegación de eventos para [data-nav-link].
+   * Así los clics muestran el artículo correcto aunque script.js se ejecute antes o falle.
+   */
+  function attachPageSwitcher() {
+    var root = document.getElementById('root');
+    if (!root) return;
+
+    root.addEventListener('click', function (e) {
+      var btn = e.target.closest && e.target.closest('[data-nav-link]');
+      if (!btn || btn.classList.contains(HIDDEN_PAGE_CLASS)) return;
+
+      var pageId = btn.getAttribute('data-page');
+      if (!pageId) return;
+
+      var main = root.querySelector('main');
+      if (!main) return;
+
+      main.querySelectorAll('article[data-page]').forEach(function (article) {
+        if (article.getAttribute('data-page') === pageId) {
+          article.classList.remove(HIDDEN_PAGE_CLASS);
+          article.classList.add('active');
+        } else {
+          article.classList.remove('active');
+        }
+      });
+
+      main.querySelectorAll('[data-nav-link]').forEach(function (link) {
+        if (link.getAttribute('data-page') === pageId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      window.scrollTo(0, 0);
+    });
+  }
+
   function populateToolsLists() {
     var base = './assets/tools-logo/';
     document.querySelectorAll('ul[data-tools-images]').forEach(function (ul) {
@@ -124,6 +163,7 @@
   function run() {
     applyConstants();
     applyPagesConfig();
+    attachPageSwitcher();
     populateToolsLists();
   }
 

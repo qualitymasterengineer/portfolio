@@ -1279,9 +1279,128 @@ main {
   font-weight: var(--fw-300);
 }
 
+/* Portfolio item card (stack + links) */
+.portfolio-showcase {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 
+.portfolio-item {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-left: 4px solid var(--orange-yellow-crayola);
+  border-radius: 14px;
+  padding: 28px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
 
+.portfolio-item:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
 
+.portfolio-item-figure {
+  margin: 0 0 18px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--jet);
+}
+
+.portfolio-item-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  background: var(--eerie-black-1);
+}
+
+.portfolio-item-badge {
+  margin-bottom: 14px;
+}
+
+.portfolio-item-badge img {
+  display: inline-block;
+  height: 22px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.portfolio-item h3 {
+  color: var(--white-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  margin-bottom: 12px;
+}
+
+.portfolio-item-desc {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  list-style: none;
+  margin: 0 0 22px 0;
+  padding: 0;
+}
+
+.tech-stack li {
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.portfolio-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portfolio-links a {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-gold {
+  background: var(--orange-yellow-crayola);
+  color: var(--eerie-black-1);
+  border: 2px solid var(--orange-yellow-crayola);
+}
+
+.btn-gold:hover {
+  background: transparent;
+  color: var(--orange-yellow-crayola);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--orange-yellow-crayola);
+  border: 2px solid var(--orange-yellow-crayola);
+}
+
+.btn-outline:hover {
+  background: var(--orange-yellow-crayola);
+  color: var(--eerie-black-1);
+}
 
 /*-----------------------------------*\
   #BLOG
